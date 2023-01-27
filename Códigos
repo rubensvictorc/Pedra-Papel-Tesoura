@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Pedra, Papel ou Tesoura</title>
+  </head>
+  <body>
+    <h1>Pedra, Papel ou Tesoura</h1>
+    <button id="rock" onclick="play('rock')">Pedra</button>
+    <button id="paper" onclick="play('paper')">Papel</button>
+    <button id="scissors" onclick="play('scissors')">Tesoura</button>
+    <p id="result"></p>
+
+    <script>
+      // Função para jogar
+      function play(playerChoice) {
+        // Escolha do computador
+        var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+          computerChoice = "pedra";
+        } else if(computerChoice <= 0.67) {
+          computerChoice = "papel";
+        } else {
+          computerChoice = "tesoura";
+        }
+
+        // Comparando as escolhas
+        var result = "Empate!";
+        if (playerChoice === "pedra") {
+          if (computerChoice === "tesoura") {
+            result = "Você ganhou!";
+          } else if (computerChoice === "papel") {
+            result = "Você perdeu!";
+          }
+        } else if (playerChoice === "papel") {
+          if (computerChoice === "pedra") {
+            result = "Você ganhou!";
+          } else if (computerChoice === "tesoura") {
+            result = "Você perdeu!";
+          }
+        } else if (playerChoice === "tesoura") {
+          if (computerChoice === "papel") {
+            result = "Você ganhou!";
+          } else if (computerChoice === "pedra") {
+            result = "Você perdeu!";
+          }
+        }
+
+        // Exibindo o resultado
+        document.getElementById("result").innerHTML = "Você escolheu " + playerChoice + ". O computador escolheu " + computerChoice + ". " + result;
+      }
+    </script>
+  </body>
+</html>
