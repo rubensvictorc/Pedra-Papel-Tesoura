@@ -1,0 +1,1 @@
+Este código cria uma página com três botões, "Pedra", "Papel" e "Tesoura", que permitem que o usuário faça sua escolha. Quando o usuário clica em um dos botões, a função "play" é chamada e passa a escolha do usuário como um parâmetro. A função gera uma escolha aleatória para o computador usando Math.random
